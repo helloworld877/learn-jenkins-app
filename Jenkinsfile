@@ -2,9 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('without docker') {
+        stage('Build') {
             steps {
-                echo 'Hello from without Docker'
+                echo 'Building Project'
+                sh ```
+                    ls -la
+                    node -v
+                    npm -v
+                    npm ci
+                    npm run build
+                    ls-la
+                ```
                 
             }
         }
