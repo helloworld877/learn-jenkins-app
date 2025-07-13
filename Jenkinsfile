@@ -5,14 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Project'
-                sh ```
+                sh '''
                     ls -la
                     node -v
                     npm -v
                     npm ci
                     npm run build
                     ls-la
-                ```
+                '''
                 
             }
         }
